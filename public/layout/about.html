@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krorya - Food Delivery Dashboard</title>
+    <link rel="stylesheet" href="../main.css">
+</head>
+<body class="bg-brand-bg text-gray-600 font-sans antialiased h-screen flex overflow-hidden">
+
+    <aside class="w-64 bg-white flex flex-col justify-between border-r border-gray-100 hidden lg:flex z-30">
+        <div>
+            <div class="h-24 flex items-center px-8">
+                <div class="flex items-center gap-2">
+                     <div class="text-brand-red">
+                         <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+                        </svg>
+                    </div>
+                    <div class="text-brand-red font-bold text-3xl italic tracking-tighter leading-none">
+                        ក្រយា
+                        <span class="block text-[10px] text-yellow-600 not-italic font-normal tracking-[0.3em] uppercase mt-0.5">KRORYA</span>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="flex-1 space-y-2 mt-4">
+
+                <a href="home.html" class="relative flex items-center gap-4 px-8 py-3 text-gray-400 hover:text-gray-600 hover:bg-gray-50 transition-all">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    <span>ទំព័រដើម</span>
+                </a>
+
+                <a href="#" class="relative flex items-center gap-4 px-8 py-3 text-brand-red bg-red-50/50 font-bold transition-all">
+                    <div class="absolute left-0 top-0 bottom-0 w-1.5 bg-brand-red rounded-r-full"></div>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+                    <span>រុករកមុខម្ហូប</span>
+                </a>
+
+                <a href="#" class="relative flex items-center gap-4 px-8 py-3 text-gray-400 hover:text-gray-600 hover:bg-gray-50 transition-all">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" /></svg>
+                    <span>ការកម្មង់ម្ហូប</span>
+                </a>
+
+                <a href="#" class="relative flex items-center gap-4 px-8 py-3 text-gray-400 hover:text-gray-600 hover:bg-gray-50 transition-all">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
+                    <span>បញ្ជីរាយគ្រឿងទេស</span>
+                </a>
+
+                <a href="#" class="relative flex items-center gap-4 px-8 py-3 text-gray-400 hover:text-gray-600 hover:bg-gray-50 transition-all">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    <span>រូបមន្តមុខម្ហូប</span>
+                </a>
+
+                <a href="#" class="relative flex items-center gap-4 px-8 py-3 text-gray-400 hover:text-gray-600 hover:bg-gray-50 transition-all">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" /></svg>
+                    <span>ចំណង់ចំណូលចិត្ត</span>
+                </a>
+
+                <a href="#" class="relative flex items-center gap-4 px-8 py-3 text-gray-400 hover:text-gray-600 hover:bg-gray-50 transition-all">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
+                    <span>ការកំណត់ផ្សេងៗ</span>
+                </a>
+
+            </nav>
+        </div>
+    </aside>
+
+    <main class="flex-1 overflow-y-auto bg-brand-bg ">
+        <div class="p-6 lg:p-10 max-w-[1600px] mx-auto">
+
+            <header class="flex justify-between items-center mb-8">
+                <button class="lg:hidden text-gray-500">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+
+                <div class="hidden lg:flex items-center gap-2 text-brand-red font-bold text-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" /></svg>
+                    <span>ទំព័រដើម</span>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <button class="p-2.5 bg-white rounded-full shadow-sm text-gray-600 hover:text-brand-red">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    </button>
+                    <button class="p-2.5 bg-white rounded-full shadow-sm text-gray-600 hover:text-brand-red relative">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
+                        <span class="absolute top-0 right-0 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-white"></span>
+                    </button>
+                    <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-white shadow-sm">
+                        <img src="../../images/judy-image.png" alt="User" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                
+            </header>
+
+            <div class="grid grid-cols-1 xl:grid-cols-2 gap-8 ">
+
+                <div class="xl:col-span-2">
+
+                    <div class="bg-slate-50 rounded-[2rem] p-6 shadow-card mb-10 ">
+                        <div class="flex justify-between items-center mb-6 px-2">
+                            <h2 class="text-xl font-bold text-brand-gold flex items-center gap-2">
+                            <span class="text-brand-gold text-2xl">❖</span> បញ្ជីមុខម្ហូប
+                            </h2>
+                        </div>
+
+                        <div class="flex justify-between gap-4 overflow-x-auto pb-2 scrollbar-hide px-2">
+                            
+                            <div class="flex flex-col items-center gap-3 min-w-[5rem] cursor-pointer group">
+                                <div class="w-14 h-14 rounded-2xl bg-yellow-400 border border-gray-100 shadow-sm flex items-center justify-center text-gray-500 group-hover:border-brand-gold group-hover:text-brand-gold transition">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                                    </svg>
+                                </div>
+                                <span class="text-sm font-bold text-gray-600">ទាំងអស់</span>
+                            </div>
+
+                            <div class="flex flex-col items-center gap-3 min-w-[5rem] cursor-pointer group">
+                                <div class="w-14 h-14 rounded-2xl bg-white border border-gray-100 shadow-sm flex items-center justify-center text-gray-500 group-hover:border-brand-gold group-hover:text-brand-gold transition">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <span class="text-sm font-bold text-gray-600">ពេលព្រឹក</span>
+                            </div>
+
+                            <div class="flex flex-col items-center gap-3 min-w-[5rem] cursor-pointer group">
+                                <div class="w-14 h-14 rounded-2xl bg-white border border-gray-100 shadow-sm flex items-center justify-center text-gray-500 group-hover:border-brand-gold group-hover:text-brand-gold transition">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                    </svg>
+                                </div>
+                                <span class="text-sm font-bold text-gray-600">ពេលល្ងាច</span>
+                            </div>
+
+                            <div class="flex flex-col items-center gap-3 min-w-[5rem] cursor-pointer group">
+                                <div class="w-14 h-14 rounded-2xl bg-white border border-gray-100 shadow-sm flex items-center justify-center text-gray-500 group-hover:border-brand-gold group-hover:text-brand-gold transition">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                                    </svg>
+                                </div>
+                                <span class="text-sm font-bold text-gray-600">ស៊ុប</span>
+                            </div>
+
+                            <div class="flex flex-col items-center gap-3 min-w-[5rem] cursor-pointer group">
+                                <div class="w-14 h-14 rounded-2xl bg-white border border-gray-100 shadow-sm flex items-center justify-center text-gray-500 group-hover:border-brand-gold group-hover:text-brand-gold transition">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                                    </svg>
+                                </div>
+                                <span class="text-sm font-bold text-gray-600">ភេសជ្ជៈ</span>
+                            </div>
+
+                            <div class="flex flex-col items-center gap-3 min-w-[5rem] cursor-pointer group">
+                                <div class="w-14 h-14 rounded-2xl bg-white border border-gray-100 shadow-sm flex items-center justify-center text-gray-500 group-hover:border-brand-gold group-hover:text-brand-gold transition">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zm-3-9v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2h12z" />
+                                    </svg>
+                                </div>
+                                <span class="text-sm font-bold text-gray-600">បង្អែម</span>
+                            </div>
+
+                            <div class="flex flex-col items-center gap-3 min-w-[5rem] cursor-pointer group">
+                                <div class="w-14 h-14 rounded-2xl bg-white border border-gray-100 shadow-sm flex items-center justify-center text-gray-500 group-hover:border-brand-gold group-hover:text-brand-gold transition">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                    </svg>
+                                </div>
+                                <span class="text-sm font-bold text-gray-600">ពេលល្ងាច</span>
+                            </div>
+
+                            <div class="flex flex-col items-center gap-3 min-w-[5rem] cursor-pointer group">
+                                <div class="w-14 h-14 rounded-2xl bg-white border border-gray-100 shadow-sm flex items-center justify-center text-gray-500 group-hover:border-brand-gold group-hover:text-brand-gold transition">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                                    </svg>
+                                </div>
+                                <span class="text-sm font-bold text-gray-600">ស៊ុប</span>
+                            </div>
+
+                            <div class="flex flex-col items-center gap-3 min-w-[5rem] cursor-pointer group">
+                                <div class="w-14 h-14 rounded-2xl bg-white border border-gray-100 shadow-sm flex items-center justify-center text-gray-500 group-hover:border-brand-gold group-hover:text-brand-gold transition">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                                    </svg>
+                                </div>
+                                <span class="text-sm font-bold text-gray-600">ភេសជ្ជៈ</span>
+                            </div>
+
+                            <div class="flex flex-col items-center gap-3 min-w-[5rem] cursor-pointer group">
+                                <div class="w-14 h-14 rounded-2xl bg-white border border-gray-100 shadow-sm flex items-center justify-center text-gray-500 group-hover:border-brand-gold group-hover:text-brand-gold transition">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zm-3-9v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2h12z" />
+                                    </svg>
+                                </div>
+                                <span class="text-sm font-bold text-gray-600">បង្អែម</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-3xl">
+                        <div class="bg-white p-6 pb-10">
+                            <div class="flex justify-between items-center mb-6 pl-2">
+                            <h2 class="text-xl font-bold text-brand-gold flex items-center gap-2">
+                                <span class="text-brand-gold text-2xl">❖</span> ម្ហូបពេញនិយម
+                            </h2>
+                        </div>
+
+                        <div class="p-6 pb-10">
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pb-7">
+
+                                <div class="bg-white p-3 rounded-[1.5rem] shadow-card hover:shadow-lg transition group border border-gray-50">
+                                    <div class="relative h-44 rounded-2xl overflow-hidden mb-4">
+                                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Food">
+                                        <div class="absolute top-3 right-3 flex gap-2">
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-400 hover:text-brand-red backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                                </svg>
+                                            </button>
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-600 hover:text-brand-gold backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <h3 class="font-bold text-gray-800 text-lg mb-1">បាយឆាគ្រឿងសមុទ្រ</h3>
+                                    <div class="flex items-center gap-1 text-sm text-gray-400 mb-3">
+                                        <svg class="w-4 h-4 text-brand-gold fill-current" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <span class="font-bold text-gray-700">4.8</span> <span>(90)</span>
+                                    </div>
+                                    <div class="text-right text-brand-gold font-bold text-lg">
+                                        ៨០០០ រៀល
+                                    </div>
+                                </div>
+
+                                <div class="bg-white p-3 rounded-[1.5rem] shadow-card hover:shadow-lg transition group border border-gray-50">
+                                    <div class="relative h-44 rounded-2xl overflow-hidden mb-4">
+                                        <img src="https://images.unsplash.com/photo-1596797038530-2c107229654b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Food">
+                                        <div class="absolute top-3 right-3 flex gap-2">
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-400 hover:text-brand-red backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                                </svg>
+                                            </button>
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-600 hover:text-brand-gold backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <h3 class="font-bold text-gray-800 text-lg mb-1">បាយឆាគ្រឿងសមុទ្រ</h3>
+                                    <div class="flex items-center gap-1 text-sm text-gray-400 mb-3">
+                                        <svg class="w-4 h-4 text-brand-gold fill-current" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <span class="font-bold text-gray-700">4.8</span> <span>(90)</span>
+                                    </div>
+                                    <div class="text-right text-brand-gold font-bold text-lg">
+                                        ៨០០០ រៀល
+                                    </div>
+                                </div>
+
+                                <div class="bg-white p-3 rounded-[1.5rem] shadow-card hover:shadow-lg transition group border border-gray-50">
+                                    <div class="relative h-44 rounded-2xl overflow-hidden mb-4">
+                                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Food">
+                                        <div class="absolute top-3 right-3 flex gap-2">
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-400 hover:text-brand-red backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                                </svg>
+                                            </button>
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-600 hover:text-brand-gold backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <h3 class="font-bold text-gray-800 text-lg mb-1">បាយឆាគ្រឿងសមុទ្រ</h3>
+                                    <div class="flex items-center gap-1 text-sm text-gray-400 mb-3">
+                                        <svg class="w-4 h-4 text-brand-gold fill-current" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <span class="font-bold text-gray-700">4.8</span> <span>(90)</span>
+                                    </div>
+                                    <div class="text-right text-brand-gold font-bold text-lg">
+                                        ៨០០០ រៀល
+                                    </div>
+                                </div>
+
+                                <div class="bg-white p-3 rounded-[1.5rem] shadow-card hover:shadow-lg transition group border border-gray-50">
+                                    <div class="relative h-44 rounded-2xl overflow-hidden mb-4">
+                                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Food">
+                                        <div class="absolute top-3 right-3 flex gap-2">
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-400 hover:text-brand-red backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                                </svg>
+                                            </button>
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-600 hover:text-brand-gold backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <h3 class="font-bold text-gray-800 text-lg mb-1">បាយឆាគ្រឿងសមុទ្រ</h3>
+                                    <div class="flex items-center gap-1 text-sm text-gray-400 mb-3">
+                                        <svg class="w-4 h-4 text-brand-gold fill-current" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <span class="font-bold text-gray-700">4.8</span> <span>(90)</span>
+                                    </div>
+                                    <div class="text-right text-brand-gold font-bold text-lg">
+                                        ៨០០០ រៀល
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pb-7">
+
+                                <div class="bg-white p-3 rounded-[1.5rem] shadow-card hover:shadow-lg transition group border border-gray-50">
+                                    <div class="relative h-44 rounded-2xl overflow-hidden mb-4">
+                                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Food">
+                                        <div class="absolute top-3 right-3 flex gap-2">
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-400 hover:text-brand-red backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                                </svg>
+                                            </button>
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-600 hover:text-brand-gold backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <h3 class="font-bold text-gray-800 text-lg mb-1">បាយឆាគ្រឿងសមុទ្រ</h3>
+                                    <div class="flex items-center gap-1 text-sm text-gray-400 mb-3">
+                                        <svg class="w-4 h-4 text-brand-gold fill-current" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <span class="font-bold text-gray-700">4.8</span> <span>(90)</span>
+                                    </div>
+                                    <div class="text-right text-brand-gold font-bold text-lg">
+                                        ៨០០០ រៀល
+                                    </div>
+                                </div>
+
+                                <div class="bg-white p-3 rounded-[1.5rem] shadow-card hover:shadow-lg transition group border border-gray-50">
+                                    <div class="relative h-44 rounded-2xl overflow-hidden mb-4">
+                                        <img src="https://images.unsplash.com/photo-1596797038530-2c107229654b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Food">
+                                        <div class="absolute top-3 right-3 flex gap-2">
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-400 hover:text-brand-red backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                                </svg>
+                                            </button>
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-600 hover:text-brand-gold backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <h3 class="font-bold text-gray-800 text-lg mb-1">បាយឆាគ្រឿងសមុទ្រ</h3>
+                                    <div class="flex items-center gap-1 text-sm text-gray-400 mb-3">
+                                        <svg class="w-4 h-4 text-brand-gold fill-current" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <span class="font-bold text-gray-700">4.8</span> <span>(90)</span>
+                                    </div>
+                                    <div class="text-right text-brand-gold font-bold text-lg">
+                                        ៨០០០ រៀល
+                                    </div>
+                                </div>
+
+                                <div class="bg-white p-3 rounded-[1.5rem] shadow-card hover:shadow-lg transition group border border-gray-50">
+                                    <div class="relative h-44 rounded-2xl overflow-hidden mb-4">
+                                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Food">
+                                        <div class="absolute top-3 right-3 flex gap-2">
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-400 hover:text-brand-red backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                                </svg>
+                                            </button>
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-600 hover:text-brand-gold backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <h3 class="font-bold text-gray-800 text-lg mb-1">បាយឆាគ្រឿងសមុទ្រ</h3>
+                                    <div class="flex items-center gap-1 text-sm text-gray-400 mb-3">
+                                        <svg class="w-4 h-4 text-brand-gold fill-current" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <span class="font-bold text-gray-700">4.8</span> <span>(90)</span>
+                                    </div>
+                                    <div class="text-right text-brand-gold font-bold text-lg">
+                                        ៨០០០ រៀល
+                                    </div>
+                                </div>
+
+                                <div class="bg-white p-3 rounded-[1.5rem] shadow-card hover:shadow-lg transition group border border-gray-50">
+                                    <div class="relative h-44 rounded-2xl overflow-hidden mb-4">
+                                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Food">
+                                        <div class="absolute top-3 right-3 flex gap-2">
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-400 hover:text-brand-red backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                                </svg>
+                                            </button>
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-600 hover:text-brand-gold backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <h3 class="font-bold text-gray-800 text-lg mb-1">បាយឆាគ្រឿងសមុទ្រ</h3>
+                                    <div class="flex items-center gap-1 text-sm text-gray-400 mb-3">
+                                        <svg class="w-4 h-4 text-brand-gold fill-current" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <span class="font-bold text-gray-700">4.8</span> <span>(90)</span>
+                                    </div>
+                                    <div class="text-right text-brand-gold font-bold text-lg">
+                                        ៨០០០ រៀល
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pb-7">
+
+                                <div class="bg-white p-3 rounded-[1.5rem] shadow-card hover:shadow-lg transition group border border-gray-50">
+                                    <div class="relative h-44 rounded-2xl overflow-hidden mb-4">
+                                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Food">
+                                        <div class="absolute top-3 right-3 flex gap-2">
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-400 hover:text-brand-red backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                                </svg>
+                                            </button>
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-600 hover:text-brand-gold backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <h3 class="font-bold text-gray-800 text-lg mb-1">បាយឆាគ្រឿងសមុទ្រ</h3>
+                                    <div class="flex items-center gap-1 text-sm text-gray-400 mb-3">
+                                        <svg class="w-4 h-4 text-brand-gold fill-current" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <span class="font-bold text-gray-700">4.8</span> <span>(90)</span>
+                                    </div>
+                                    <div class="text-right text-brand-gold font-bold text-lg">
+                                        ៨០០០ រៀល
+                                    </div>
+                                </div>
+
+                                <div class="bg-white p-3 rounded-[1.5rem] shadow-card hover:shadow-lg transition group border border-gray-50">
+                                    <div class="relative h-44 rounded-2xl overflow-hidden mb-4">
+                                        <img src="https://images.unsplash.com/photo-1596797038530-2c107229654b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Food">
+                                        <div class="absolute top-3 right-3 flex gap-2">
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-400 hover:text-brand-red backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                                </svg>
+                                            </button>
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-600 hover:text-brand-gold backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <h3 class="font-bold text-gray-800 text-lg mb-1">បាយឆាគ្រឿងសមុទ្រ</h3>
+                                    <div class="flex items-center gap-1 text-sm text-gray-400 mb-3">
+                                        <svg class="w-4 h-4 text-brand-gold fill-current" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <span class="font-bold text-gray-700">4.8</span> <span>(90)</span>
+                                    </div>
+                                    <div class="text-right text-brand-gold font-bold text-lg">
+                                        ៨០០០ រៀល
+                                    </div>
+                                </div>
+
+                                <div class="bg-white p-3 rounded-[1.5rem] shadow-card hover:shadow-lg transition group border border-gray-50">
+                                    <div class="relative h-44 rounded-2xl overflow-hidden mb-4">
+                                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Food">
+                                        <div class="absolute top-3 right-3 flex gap-2">
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-400 hover:text-brand-red backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                                </svg>
+                                            </button>
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-600 hover:text-brand-gold backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <h3 class="font-bold text-gray-800 text-lg mb-1">បាយឆាគ្រឿងសមុទ្រ</h3>
+                                    <div class="flex items-center gap-1 text-sm text-gray-400 mb-3">
+                                        <svg class="w-4 h-4 text-brand-gold fill-current" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <span class="font-bold text-gray-700">4.8</span> <span>(90)</span>
+                                    </div>
+                                    <div class="text-right text-brand-gold font-bold text-lg">
+                                        ៨០០០ រៀល
+                                    </div>
+                                </div>
+
+                                <div class="bg-white p-3 rounded-[1.5rem] shadow-card hover:shadow-lg transition group border border-gray-50">
+                                    <div class="relative h-44 rounded-2xl overflow-hidden mb-4">
+                                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Food">
+                                        <div class="absolute top-3 right-3 flex gap-2">
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-400 hover:text-brand-red backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                                </svg>
+                                            </button>
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-600 hover:text-brand-gold backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <h3 class="font-bold text-gray-800 text-lg mb-1">បាយឆាគ្រឿងសមុទ្រ</h3>
+                                    <div class="flex items-center gap-1 text-sm text-gray-400 mb-3">
+                                        <svg class="w-4 h-4 text-brand-gold fill-current" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <span class="font-bold text-gray-700">4.8</span> <span>(90)</span>
+                                    </div>
+                                    <div class="text-right text-brand-gold font-bold text-lg">
+                                        ៨០០០ រៀល
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pb-7">
+
+                                <div class="bg-white p-3 rounded-[1.5rem] shadow-card hover:shadow-lg transition group border border-gray-50">
+                                    <div class="relative h-44 rounded-2xl overflow-hidden mb-4">
+                                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Food">
+                                        <div class="absolute top-3 right-3 flex gap-2">
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-400 hover:text-brand-red backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                                </svg>
+                                            </button>
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-600 hover:text-brand-gold backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <h3 class="font-bold text-gray-800 text-lg mb-1">បាយឆាគ្រឿងសមុទ្រ</h3>
+                                    <div class="flex items-center gap-1 text-sm text-gray-400 mb-3">
+                                        <svg class="w-4 h-4 text-brand-gold fill-current" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <span class="font-bold text-gray-700">4.8</span> <span>(90)</span>
+                                    </div>
+                                    <div class="text-right text-brand-gold font-bold text-lg">
+                                        ៨០០០ រៀល
+                                    </div>
+                                </div>
+
+                                <div class="bg-white p-3 rounded-[1.5rem] shadow-card hover:shadow-lg transition group border border-gray-50">
+                                    <div class="relative h-44 rounded-2xl overflow-hidden mb-4">
+                                        <img src="https://images.unsplash.com/photo-1596797038530-2c107229654b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Food">
+                                        <div class="absolute top-3 right-3 flex gap-2">
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-400 hover:text-brand-red backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                                </svg>
+                                            </button>
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-600 hover:text-brand-gold backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <h3 class="font-bold text-gray-800 text-lg mb-1">បាយឆាគ្រឿងសមុទ្រ</h3>
+                                    <div class="flex items-center gap-1 text-sm text-gray-400 mb-3">
+                                        <svg class="w-4 h-4 text-brand-gold fill-current" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <span class="font-bold text-gray-700">4.8</span> <span>(90)</span>
+                                    </div>
+                                    <div class="text-right text-brand-gold font-bold text-lg">
+                                        ៨០០០ រៀល
+                                    </div>
+                                </div>
+
+                                <div class="bg-white p-3 rounded-[1.5rem] shadow-card hover:shadow-lg transition group border border-gray-50">
+                                    <div class="relative h-44 rounded-2xl overflow-hidden mb-4">
+                                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Food">
+                                        <div class="absolute top-3 right-3 flex gap-2">
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-400 hover:text-brand-red backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                                </svg>
+                                            </button>
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-600 hover:text-brand-gold backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <h3 class="font-bold text-gray-800 text-lg mb-1">បាយឆាគ្រឿងសមុទ្រ</h3>
+                                    <div class="flex items-center gap-1 text-sm text-gray-400 mb-3">
+                                        <svg class="w-4 h-4 text-brand-gold fill-current" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <span class="font-bold text-gray-700">4.8</span> <span>(90)</span>
+                                    </div>
+                                    <div class="text-right text-brand-gold font-bold text-lg">
+                                        ៨០០០ រៀល
+                                    </div>
+                                </div>
+
+                                <div class="bg-white p-3 rounded-[1.5rem] shadow-card hover:shadow-lg transition group border border-gray-50">
+                                    <div class="relative h-44 rounded-2xl overflow-hidden mb-4">
+                                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Food">
+                                        <div class="absolute top-3 right-3 flex gap-2">
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-400 hover:text-brand-red backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                                </svg>
+                                            </button>
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-600 hover:text-brand-gold backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <h3 class="font-bold text-gray-800 text-lg mb-1">បាយឆាគ្រឿងសមុទ្រ</h3>
+                                    <div class="flex items-center gap-1 text-sm text-gray-400 mb-3">
+                                        <svg class="w-4 h-4 text-brand-gold fill-current" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <span class="font-bold text-gray-700">4.8</span> <span>(90)</span>
+                                    </div>
+                                    <div class="text-right text-brand-gold font-bold text-lg">
+                                        ៨០០០ រៀល
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pb-7">
+
+                                <div class="bg-white p-3 rounded-[1.5rem] shadow-card hover:shadow-lg transition group border border-gray-50">
+                                    <div class="relative h-44 rounded-2xl overflow-hidden mb-4">
+                                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Food">
+                                        <div class="absolute top-3 right-3 flex gap-2">
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-400 hover:text-brand-red backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                                </svg>
+                                            </button>
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-600 hover:text-brand-gold backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <h3 class="font-bold text-gray-800 text-lg mb-1">បាយឆាគ្រឿងសមុទ្រ</h3>
+                                    <div class="flex items-center gap-1 text-sm text-gray-400 mb-3">
+                                        <svg class="w-4 h-4 text-brand-gold fill-current" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <span class="font-bold text-gray-700">4.8</span> <span>(90)</span>
+                                    </div>
+                                    <div class="text-right text-brand-gold font-bold text-lg">
+                                        ៨០០០ រៀល
+                                    </div>
+                                </div>
+
+                                <div class="bg-white p-3 rounded-[1.5rem] shadow-card hover:shadow-lg transition group border border-gray-50">
+                                    <div class="relative h-44 rounded-2xl overflow-hidden mb-4">
+                                        <img src="https://images.unsplash.com/photo-1596797038530-2c107229654b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Food">
+                                        <div class="absolute top-3 right-3 flex gap-2">
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-400 hover:text-brand-red backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                                </svg>
+                                            </button>
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-600 hover:text-brand-gold backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <h3 class="font-bold text-gray-800 text-lg mb-1">បាយឆាគ្រឿងសមុទ្រ</h3>
+                                    <div class="flex items-center gap-1 text-sm text-gray-400 mb-3">
+                                        <svg class="w-4 h-4 text-brand-gold fill-current" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <span class="font-bold text-gray-700">4.8</span> <span>(90)</span>
+                                    </div>
+                                    <div class="text-right text-brand-gold font-bold text-lg">
+                                        ៨០០០ រៀល
+                                    </div>
+                                </div>
+
+                                <div class="bg-white p-3 rounded-[1.5rem] shadow-card hover:shadow-lg transition group border border-gray-50">
+                                    <div class="relative h-44 rounded-2xl overflow-hidden mb-4">
+                                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Food">
+                                        <div class="absolute top-3 right-3 flex gap-2">
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-400 hover:text-brand-red backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                                </svg>
+                                            </button>
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-600 hover:text-brand-gold backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <h3 class="font-bold text-gray-800 text-lg mb-1">បាយឆាគ្រឿងសមុទ្រ</h3>
+                                    <div class="flex items-center gap-1 text-sm text-gray-400 mb-3">
+                                        <svg class="w-4 h-4 text-brand-gold fill-current" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <span class="font-bold text-gray-700">4.8</span> <span>(90)</span>
+                                    </div>
+                                    <div class="text-right text-brand-gold font-bold text-lg">
+                                        ៨០០០ រៀល
+                                    </div>
+                                </div>
+
+                                <div class="bg-white p-3 rounded-[1.5rem] shadow-card hover:shadow-lg transition group border border-gray-50">
+                                    <div class="relative h-44 rounded-2xl overflow-hidden mb-4">
+                                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Food">
+                                        <div class="absolute top-3 right-3 flex gap-2">
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-400 hover:text-brand-red backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                                </svg>
+                                            </button>
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-600 hover:text-brand-gold backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <h3 class="font-bold text-gray-800 text-lg mb-1">បាយឆាគ្រឿងសមុទ្រ</h3>
+                                    <div class="flex items-center gap-1 text-sm text-gray-400 mb-3">
+                                        <svg class="w-4 h-4 text-brand-gold fill-current" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <span class="font-bold text-gray-700">4.8</span> <span>(90)</span>
+                                    </div>
+                                    <div class="text-right text-brand-gold font-bold text-lg">
+                                        ៨០០០ រៀល
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pb-7">
+
+                                <div class="bg-white p-3 rounded-[1.5rem] shadow-card hover:shadow-lg transition group border border-gray-50">
+                                    <div class="relative h-44 rounded-2xl overflow-hidden mb-4">
+                                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Food">
+                                        <div class="absolute top-3 right-3 flex gap-2">
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-400 hover:text-brand-red backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                                </svg>
+                                            </button>
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-600 hover:text-brand-gold backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <h3 class="font-bold text-gray-800 text-lg mb-1">បាយឆាគ្រឿងសមុទ្រ</h3>
+                                    <div class="flex items-center gap-1 text-sm text-gray-400 mb-3">
+                                        <svg class="w-4 h-4 text-brand-gold fill-current" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <span class="font-bold text-gray-700">4.8</span> <span>(90)</span>
+                                    </div>
+                                    <div class="text-right text-brand-gold font-bold text-lg">
+                                        ៨០០០ រៀល
+                                    </div>
+                                </div>
+
+                                <div class="bg-white p-3 rounded-[1.5rem] shadow-card hover:shadow-lg transition group border border-gray-50">
+                                    <div class="relative h-44 rounded-2xl overflow-hidden mb-4">
+                                        <img src="https://images.unsplash.com/photo-1596797038530-2c107229654b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Food">
+                                        <div class="absolute top-3 right-3 flex gap-2">
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-400 hover:text-brand-red backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                                </svg>
+                                            </button>
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-600 hover:text-brand-gold backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <h3 class="font-bold text-gray-800 text-lg mb-1">បាយឆាគ្រឿងសមុទ្រ</h3>
+                                    <div class="flex items-center gap-1 text-sm text-gray-400 mb-3">
+                                        <svg class="w-4 h-4 text-brand-gold fill-current" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <span class="font-bold text-gray-700">4.8</span> <span>(90)</span>
+                                    </div>
+                                    <div class="text-right text-brand-gold font-bold text-lg">
+                                        ៨០០០ រៀល
+                                    </div>
+                                </div>
+
+                                <div class="bg-white p-3 rounded-[1.5rem] shadow-card hover:shadow-lg transition group border border-gray-50">
+                                    <div class="relative h-44 rounded-2xl overflow-hidden mb-4">
+                                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Food">
+                                        <div class="absolute top-3 right-3 flex gap-2">
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-400 hover:text-brand-red backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                                </svg>
+                                            </button>
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-600 hover:text-brand-gold backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <h3 class="font-bold text-gray-800 text-lg mb-1">បាយឆាគ្រឿងសមុទ្រ</h3>
+                                    <div class="flex items-center gap-1 text-sm text-gray-400 mb-3">
+                                        <svg class="w-4 h-4 text-brand-gold fill-current" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <span class="font-bold text-gray-700">4.8</span> <span>(90)</span>
+                                    </div>
+                                    <div class="text-right text-brand-gold font-bold text-lg">
+                                        ៨០០០ រៀល
+                                    </div>
+                                </div>
+
+                                <div class="bg-white p-3 rounded-[1.5rem] shadow-card hover:shadow-lg transition group border border-gray-50">
+                                    <div class="relative h-44 rounded-2xl overflow-hidden mb-4">
+                                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Food">
+                                        <div class="absolute top-3 right-3 flex gap-2">
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-400 hover:text-brand-red backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                                </svg>
+                                            </button>
+                                            <button class="w-8 h-8 flex items-center justify-center bg-white/90 rounded-full text-gray-600 hover:text-brand-gold backdrop-blur-sm shadow-sm transition">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <h3 class="font-bold text-gray-800 text-lg mb-1">បាយឆាគ្រឿងសមុទ្រ</h3>
+                                    <div class="flex items-center gap-1 text-sm text-gray-400 mb-3">
+                                        <svg class="w-4 h-4 text-brand-gold fill-current" viewBox="0 0 20 20">
+                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                        </svg>
+                                        <span class="font-bold text-gray-700">4.8</span> <span>(90)</span>
+                                    </div>
+                                    <div class="text-right text-brand-gold font-bold text-lg">
+                                        ៨០០០ រៀល
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-center mt-8 pb-10">
+                                <button class="border border-brand-gold text-brand-gold bg-white px-4 py-2 rounded-lg font-bold hover:bg-brand-gold hover:text-white transition">
+                                    បង្ហាញថែមទៀត
+                                </button>
+                            </div>
+
+                            <div class="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
+                                <div class="flex flex-1 justify-between sm:hidden">
+                                    <a href="#" class="relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Previous</a>
+                                    <a href="#" class="relative ml-3 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Next</a>
+                                </div>
+                                <div class="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
+                                    <div>
+                                    <p class="text-sm text-gray-700">
+                                        Showing
+                                        <span class="font-medium">1</span>
+                                        to
+                                        <span class="font-medium">10</span>
+                                        of
+                                        <span class="font-medium">97</span>
+                                        results
+                                    </p>
+                                    </div>
+                                    <div>
+                                    <nav aria-label="Pagination" class="isolate inline-flex -space-x-px rounded-md shadow-xs">
+                                        <a href="#" class="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 inset-ring inset-ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
+                                        <span class="sr-only">Previous</span>
+                                        <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5">
+                                            <path d="M11.78 5.22a.75.75 0 0 1 0 1.06L8.06 10l3.72 3.72a.75.75 0 1 1-1.06 1.06l-4.25-4.25a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" fill-rule="evenodd" />
+                                        </svg>
+                                        </a>
+                                        <!-- Current: "z-10 bg-indigo-600 text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600", Default: "text-gray-900 inset-ring inset-ring-gray-300 hover:bg-gray-50 focus:outline-offset-0" -->
+                                        <a href="#" aria-current="page" class="relative z-10 inline-flex items-center bg-yellow-400 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">1</a>
+                                        <a href="#" class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 inset-ring inset-ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">2</a>
+                                        <a href="#" class="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 inset-ring inset-ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex">3</a>
+                                        <span class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-700 inset-ring inset-ring-gray-300 focus:outline-offset-0">...</span>
+                                        <a href="#" class="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 inset-ring inset-ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex">8</a>
+                                        <a href="#" class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 inset-ring inset-ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">9</a>
+                                        <a href="#" class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 inset-ring inset-ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">10</a>
+                                        <a href="#" class="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 inset-ring inset-ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
+                                        <span class="sr-only">Next</span>
+                                        <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5">
+                                            <path d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
+                                        </svg>
+                                        </a>
+                                    </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
