@@ -1639,6 +1639,10 @@ video {
   padding: 2rem;
 }
 
+.p-10{
+  padding: 2.5rem;
+}
+
 .px-1{
   padding-left: 0.25rem;
   padding-right: 0.25rem;
@@ -1704,6 +1708,11 @@ video {
   padding-bottom: 1.5rem;
 }
 
+.px-10{
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
 .pb-10{
   padding-bottom: 2.5rem;
 }
@@ -1754,6 +1763,18 @@ video {
 
 .pt-20{
   padding-top: 5rem;
+}
+
+.pb-3{
+  padding-bottom: 0.75rem;
+}
+
+.pb-\[30\]{
+  padding-bottom: 30;
+}
+
+.pb-\[30px\]{
+  padding-bottom: 30px;
 }
 
 .text-left{
@@ -1977,6 +1998,11 @@ video {
 .text-yellow-700{
   --tw-text-opacity: 1;
   color: rgb(161 98 7 / var(--tw-text-opacity, 1));
+}
+
+.text-\[\#82623D\]{
+  --tw-text-opacity: 1;
+  color: rgb(130 98 61 / var(--tw-text-opacity, 1));
 }
 
 .antialiased{
